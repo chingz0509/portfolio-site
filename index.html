@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Cheng Zhuo 的 UX / UE 作品集首页"
+    />
+    <title>Cheng Zhuo — UX / UE Portfolio</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      :root {
+        color: #010101;
+        font-family: Inter, Arial, sans-serif;
+        font-synthesis: none;
+      }
+
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+      }
+
+      body {
+        overflow-x: hidden;
+        background: #fff;
+      }
+
+      h1,
+      p {
+        margin: 0;
+      }
+
+      img {
+        display: block;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+
+      .hero {
+        position: relative;
+        width: 100vw;
+        min-height: 100svh;
+        overflow: hidden;
+        isolation: isolate;
+        background: #fff;
+      }
+
+      /* 必要绝对定位：装饰和叠层元素需要保留 1920 × 1080 设计稿中的重叠与裁切关系。 */
+      .hero__background {
+        position: absolute;
+        z-index: -2;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+      }
+
+      .hero__eyebrow {
+        position: absolute;
+        top: 29.07%;
+        left: 8.49%;
+        z-index: 1;
+        display: flex;
+        width: 46.72%;
+        align-items: center;
+        gap: 1.67vw;
+      }
+
+      .hero__eyebrow-text,
+      .hero__year {
+        flex: 0 0 auto;
+        font-family: Inter, Arial, sans-serif;
+        font-size: clamp(38px, 4.17vw, 80px);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .hero__rule {
+        height: 1px;
+        flex: 1 1 auto;
+        background: #000;
+      }
+
+      .hero__title-wrap {
+        position: absolute;
+        top: 35%;
+        left: 7.66%;
+        z-index: 4;
+        display: flex;
+        width: 84.27%;
+        align-items: center;
+      }
+
+      .hero__title {
+        font-family: Inter, Arial, sans-serif;
+        font-size: clamp(120px, 18.2vw, 350px);
+        font-weight: 900;
+        line-height: 1.06;
+        letter-spacing: 0.07em;
+        white-space: nowrap;
+      }
+
+      .hero__person {
+        position: absolute;
+        top: 31.39%;
+        left: 65.2%;
+        z-index: 5;
+        width: 11.93%;
+        height: 37.78%;
+        object-fit: contain;
+      }
+
+      .hero__signature {
+        position: absolute;
+        top: 50.55%;
+        left: 59.27%;
+        z-index: 6;
+        color: #81b8e6;
+        font-family: Inter, Arial, sans-serif;
+        font-size: clamp(38px, 4.17vw, 80px);
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.6;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+      }
+
+      .hero__year-row {
+        position: absolute;
+        top: 68.7%;
+        left: 51.09%;
+        z-index: 2;
+        display: flex;
+        width: 40.31%;
+        align-items: center;
+        gap: 1.67vw;
+      }
+
+      .hero__glow {
+        position: absolute;
+        top: 65.74%;
+        left: 67.55%;
+        z-index: 3;
+        width: 8.39%;
+        aspect-ratio: 161 / 90;
+        border-radius: 999px;
+        background: #bbbdbd;
+        filter: blur(59px);
+        opacity: 0.7;
+      }
+
+      .hero__star {
+        position: absolute;
+        z-index: 7;
+        width: clamp(18px, 1.67vw, 32px);
+        height: clamp(18px, 1.67vw, 32px);
+      }
+
+      .hero__star--top {
+        top: 31.67%;
+        left: 89.32%;
+      }
+
+      .hero__star--bottom {
+        top: 67.59%;
+        left: 8.91%;
+      }
+
+      @media (max-aspect-ratio: 4 / 3) {
+        .hero__eyebrow {
+          top: 20%;
+          left: 7%;
+          width: 86%;
+          gap: 4vw;
+        }
+
+        .hero__eyebrow-text,
+        .hero__year {
+          font-size: clamp(34px, 10vw, 58px);
+        }
+
+        .hero__title-wrap {
+          top: 34%;
+          left: 6%;
+          width: 88%;
+        }
+
+        .hero__title {
+          font-size: clamp(62px, 18vw, 120px);
+          letter-spacing: -0.025em;
+        }
+
+        .hero__person {
+          top: 43%;
+          left: 52%;
+          width: 39%;
+          height: 40%;
+        }
+
+        .hero__signature {
+          top: 55%;
+          left: 18%;
+          font-size: clamp(32px, 9vw, 58px);
+        }
+
+        .hero__year-row {
+          top: 80%;
+          left: 7%;
+          width: 86%;
+          gap: 4vw;
+        }
+
+        .hero__glow {
+          top: 75%;
+          left: 48%;
+          width: 38%;
+        }
+
+        .hero__star--top {
+          top: 12%;
+          left: 84%;
+        }
+
+        .hero__star--bottom {
+          top: 72%;
+          left: 8%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      class="hero"
+      data-node-id="3975:39505"
+      data-node="0-1"
+      aria-label="Cheng Zhuo 作品集首页"
+    >
+      <img
+        class="hero__background"
+        data-node-id="3975:39528"
+        data-node="image"
+        src="./assets/images/background.png"
+        alt=""
+      />
+
+      <div class="hero__eyebrow" data-node-id="3975:39534">
+        <p class="hero__eyebrow-text" data-node-id="3975:39536">UX/UE</p>
+        <span class="hero__rule" data-node-id="3975:39535" aria-hidden="true"></span>
+      </div>
+
+      <div class="hero__title-wrap" data-node-id="3975:39507">
+        <h1 class="hero__title">Portfolio</h1>
+      </div>
+
+      <span class="hero__glow" data-node-id="3975:39523" aria-hidden="true"></span>
+
+      <img
+        class="hero__person"
+        data-node-id="3975:39531"
+        data-node="新对话"
+        src="./assets/images/person.png"
+        alt="一位正在行走的设计师"
+      />
+
+      <p class="hero__signature" data-node-id="3975:39541">Cheng Zhuo</p>
+
+      <div class="hero__year-row" data-node-id="3975:39548">
+        <span class="hero__rule" data-node-id="3975:39549" aria-hidden="true"></span>
+        <p class="hero__year" data-node-id="3975:39550">2026</p>
+      </div>
+
+      <img
+        class="hero__star hero__star--top"
+        data-node-id="3975:39520"
+        data-node="Star 2"
+        src="./assets/slices/star@3x.png"
+        alt=""
+      />
+      <img
+        class="hero__star hero__star--bottom"
+        data-node-id="3975:39555"
+        data-node="Star 3"
+        src="./assets/slices/star@3x.png"
+        alt=""
+      />
+    </main>
+  </body>
+</html>
