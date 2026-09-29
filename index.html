@@ -178,7 +178,7 @@
         left: 8.91%;
       }
 
-      @media (max-aspect-ratio: 4 / 3) {
+      @media (max-aspect-ratio: 4 / 3) and (min-width: 761px) {
         .hero__eyebrow {
           top: 20%;
           left: 7%;
@@ -240,7 +240,7 @@
       }
 
       /* 第二页「近期工作经历」（0-2，292:05933）：1920 × 1080 画板文字已转曲，
-         以内联 SVG 等比缩放做一比一还原；窄屏保持可读宽度并允许横向滑动。 */
+         以内联 SVG 等比缩放做一比一还原。 */
       .experience {
         position: relative;
         width: 100vw;
@@ -264,18 +264,8 @@
         white-space: nowrap;
       }
 
-      @media (max-width: 760px) {
-        .experience {
-          overflow-x: auto;
-        }
-
-        .experience__frame {
-          width: 900px;
-        }
-      }
-
       /* 第三页「核心竞争力」（0-3，424:03776）：同为 1920 × 1080 转曲画板，
-         沿用与上一屏一致的等比缩放与窄屏横滑规则。 */
+         沿用与上一屏一致的等比缩放规则。 */
       .competency {
         position: relative;
         width: 100vw;
@@ -299,18 +289,8 @@
         white-space: nowrap;
       }
 
-      @media (max-width: 760px) {
-        .competency {
-          overflow-x: auto;
-        }
-
-        .competency__frame {
-          width: 900px;
-        }
-      }
-
       /* 第四页「目录」（0-4，292:05935）：同为 1920 × 1080 转曲画板，
-         沿用与前几屏一致的等比缩放与窄屏横滑规则。 */
+         沿用与前几屏一致的等比缩放规则。 */
       .catalog {
         position: relative;
         width: 100vw;
@@ -334,13 +314,30 @@
         white-space: nowrap;
       }
 
+      /* 窄屏统一缩放：四屏都按 1920 × 1080 设计稿整体等比缩到屏宽，
+         hero 保持 16:9 比例、文字去掉 clamp 下限，SVG 画板铺满宽度，不再各自横滑。 */
       @media (max-width: 760px) {
-        .catalog {
-          overflow-x: auto;
+        .hero {
+          min-height: 0;
+          height: calc(100vw * 9 / 16);
         }
 
-        .catalog__frame {
-          width: 900px;
+        .hero__eyebrow-text,
+        .hero__year {
+          font-size: 4.17vw;
+        }
+
+        .hero__title {
+          font-size: 18.2vw;
+        }
+
+        .hero__signature {
+          font-size: 4.17vw;
+        }
+
+        .hero__star {
+          width: 1.67vw;
+          height: 1.67vw;
         }
       }
     </style>
